@@ -154,12 +154,24 @@
             font-weight: 650;
         }
 
+        /*
+           Project titles link directly to their GitHub repositories.
+           Blue provides a visual indication that the title is clickable.
+        */
+
         .project h3 a {
-            color: inherit;
+            color: #2563a6;
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         .project h3 a:hover {
+            color: #174a7e;
+            text-decoration: underline;
+        }
+
+        .project h3 a:focus {
+            color: #174a7e;
             text-decoration: underline;
         }
 
@@ -301,6 +313,7 @@
 
         <div class="sidebar-section">
             <p>Evanston, IL</p>
+
             <p>
                 <a href="mailto:tagbougo-obi2027@u.northwestern.edu">
                     tagbougo-obi2027@u.northwestern.edu
@@ -309,6 +322,7 @@
         </div>
 
         <div class="sidebar-links">
+
             <a href="https://github.com/T-UO"
                target="_blank"
                rel="noopener noreferrer">
@@ -326,6 +340,7 @@
                rel="noopener noreferrer">
                 Resume
             </a>
+
         </div>
 
     </aside>
@@ -334,9 +349,12 @@
     <main class="content">
         <div class="container">
 
-            <!-- ABOUT -->
+            <!-- =====================
+                 ABOUT
+            ====================== -->
 
             <section id="about">
+
                 <h2>ABOUT</h2>
 
                 <p>
@@ -372,12 +390,16 @@
                     background with my developing expertise in computer vision to
                     solve challenging real-world problems.
                 </p>
+
             </section>
 
 
-            <!-- RESEARCH INTERESTS -->
+            <!-- =====================
+                 RESEARCH INTERESTS
+            ====================== -->
 
             <section id="research">
+
                 <h2>RESEARCH INTERESTS</h2>
 
                 <div class="interests">
@@ -389,15 +411,23 @@
                     <span class="interest">Robot Perception</span>
                     <span class="interest">Embodied AI</span>
                 </div>
+
             </section>
 
 
-            <!-- PROJECTS -->
+            <!-- =====================
+                 PROJECTS
+            ====================== -->
 
             <section id="projects">
+
                 <h2>PROJECTS</h2>
 
+
+                <!-- PARALLEL SOBEL -->
+
                 <div class="project">
+
                     <h3>
                         <a href="https://github.com/T-UO/Parallel-Sobel-Pipeline"
                            target="_blank"
@@ -423,10 +453,14 @@
                         <span class="tag">Parallel Computing</span>
                         <span class="tag">Image Processing</span>
                     </div>
+
                 </div>
 
 
+                <!-- TELEOPERATION -->
+
                 <div class="project">
+
                     <h3>
                         <a href="https://github.com/T-UO/Teleoperation-Sensing-Communication"
                            target="_blank"
@@ -452,10 +486,14 @@
                         <span class="tag">UART</span>
                         <span class="tag">802.15.4</span>
                     </div>
+
                 </div>
 
 
+                <!-- IMAGE PROCESSING -->
+
                 <div class="project">
+
                     <h3>
                         <a href="https://github.com/T-UO/Image-Processing-Algorithms"
                            target="_blank"
@@ -479,10 +517,14 @@
                         <span class="tag">Edge Detection</span>
                         <span class="tag">Convolution</span>
                     </div>
+
                 </div>
 
 
+                <!-- OPENSTREETMAP -->
+
                 <div class="project">
+
                     <h3>
                         <a href="https://github.com/T-UO/OpenStreetMap-Data-Search"
                            target="_blank"
@@ -507,17 +549,23 @@
                         <span class="tag">Data Structures</span>
                         <span class="tag">Binary Search</span>
                     </div>
+
                 </div>
 
             </section>
 
 
-            <!-- EXPERIENCE -->
+            <!-- =====================
+                 EXPERIENCE
+            ====================== -->
 
             <section id="experience">
+
                 <h2>EXPERIENCE</h2>
 
+
                 <div class="experience-item">
+
                     <div class="experience-heading">
                         <h3>Peer Mentor</h3>
                         <span class="experience-date">Fall 2026</span>
@@ -527,10 +575,12 @@
                         Northwestern University ·
                         <em>CS 317: Sports, Technology and Learning</em>
                     </p>
+
                 </div>
 
 
                 <div class="experience-item">
+
                     <div class="experience-heading">
                         <h3>Capital Markets – MBS Strategies Associate</h3>
                     </div>
@@ -546,12 +596,16 @@
                         analysis and weekly pricing requests, reducing repetitive
                         manual work and streamlining recurring processes.
                     </p>
+
                 </div>
 
 
                 <div class="experience-item">
+
                     <div class="experience-heading">
-                        <h3>Healthcare Corporate Finance – Investment Banking Analyst</h3>
+                        <h3>
+                            Healthcare Corporate Finance – Investment Banking Analyst
+                        </h3>
                     </div>
 
                     <p class="organization">
@@ -563,14 +617,18 @@
                         modeling, valuation analysis, industry research, due
                         diligence, and transaction execution.
                     </p>
+
                 </div>
 
             </section>
 
 
-            <!-- TECHNICAL SKILLS -->
+            <!-- =====================
+                 TECHNICAL SKILLS
+            ====================== -->
 
             <section id="skills">
+
                 <h2>TECHNICAL SKILLS</h2>
 
                 <div class="skills-row">
@@ -602,12 +660,16 @@
                     <strong>Financial &amp; Data Tools:</strong>
                     Bloomberg, YieldBook, S&amp;P Capital IQ, Excel
                 </div>
+
             </section>
 
 
-            <!-- COURSEWORK -->
+            <!-- =====================
+                 COURSEWORK
+            ====================== -->
 
             <section id="coursework">
+
                 <h2>RELEVANT COURSEWORK</h2>
 
                 <p class="coursework">
@@ -618,6 +680,7 @@
                     Intro to Parallel Computing ·
                     Parallel Architectures
                 </p>
+
             </section>
 
         </div>
