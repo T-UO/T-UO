@@ -1,511 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagbo | Computer Science</title>
 
-<title>Tagbo Ugo-Obi| Computer Science</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<meta name="robots" content="noindex, nofollow">
+        html {
+            scroll-behavior: smooth;
+        }
 
-<style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                         Helvetica, Arial, sans-serif;
+            color: #222;
+            background: #f7f7f7;
+            line-height: 1.6;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        /* =========================
+           SIDEBAR
+        ========================= */
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f4f4;
-    color: #333333;
-    line-height: 1.7;
-}
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 310px;
+            height: 100vh;
+            background: #20252b;
+            color: #ffffff;
+            padding: 48px 34px;
+            overflow-y: auto;
+        }
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 310px;
-    height: 100vh;
-    padding: 45px 35px;
-    background: #333333;
-    color: white;
-}
+        .portrait {
+            width: 145px;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            margin-bottom: 25px;
+        }
 
-.profile-photo {
-    width: 190px;
-    height: 190px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    border: 2px solid #aaaaaa;
-    display: block;
-    margin-bottom: 25px;
-}
+        .sidebar h1 {
+            margin: 0 0 6px 0;
+            font-size: 30px;
+            font-weight: 650;
+        }
 
-.sidebar h1 {
-    margin: 0 0 15px 0;
-    font-size: 27px;
-    line-height: 1.2;
-}
+        .sidebar .subtitle {
+            margin: 0 0 28px 0;
+            color: #c9cdd2;
+            font-size: 15px;
+        }
 
-.education-sidebar {
-    margin-bottom: 28px;
-    line-height: 1.5;
-}
+        .sidebar-section {
+            margin-bottom: 26px;
+        }
 
-.school {
-    margin-bottom: 17px;
-}
+        .sidebar-section p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #d7d9dc;
+        }
 
-.school-name {
-    color: white;
-    font-weight: 600;
-}
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+        }
 
-.degree-name {
-    color: #cccccc;
-    font-size: 15px;
-}
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
 
-.sidebar p {
-    margin: 13px 0;
-}
+        .sidebar-links {
+            margin-top: 28px;
+        }
 
-.sidebar a {
-    color: white;
-    text-decoration: none;
-}
+        .sidebar-links a {
+            display: block;
+            margin: 9px 0;
+            font-size: 15px;
+        }
 
-.sidebar a:hover {
-    color: #168aad;
-}
+        /* =========================
+           MAIN CONTENT
+        ========================= */
 
-.content {
-    margin-left: 310px;
-    max-width: 1200px;
-    padding: 55px 75px 100px 75px;
-}
+        .content {
+            margin-left: 310px;
+            min-height: 100vh;
+            padding: 60px 8%;
+            background: #ffffff;
+        }
 
-section {
-    margin-bottom: 65px;
-}
+        .container {
+            max-width: 950px;
+        }
 
-h2 {
-    font-size: 19px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-bottom: 1px solid #999999;
-    padding-bottom: 8px;
-    margin-bottom: 22px;
-}
+        section {
+            margin-bottom: 58px;
+        }
 
-.content p {
-    font-size: 18px;
-    margin-bottom: 22px;
-}
+        h2 {
+            margin: 0 0 25px 0;
+            padding-bottom: 9px;
+            border-bottom: 1px solid #d8d8d8;
+            font-size: 21px;
+            font-weight: 650;
+            letter-spacing: 0.06em;
+        }
 
+        p {
+            margin-top: 0;
+        }
 
-/* PROJECTS */
+        /* =========================
+           RESEARCH INTERESTS
+        ========================= */
 
-.project {
-    margin-bottom: 40px;
-}
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
 
-.project h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
+        .interest {
+            background: #eef0f2;
+            border-radius: 4px;
+            padding: 7px 11px;
+            font-size: 14px;
+        }
 
-.tags {
-    font-size: 14px;
-    color: #777777;
-}
+        /* =========================
+           PROJECTS
+        ========================= */
 
+        .project {
+            margin-bottom: 34px;
+        }
 
-/* EXPERIENCE */
+        .project h3 {
+            margin: 0 0 8px 0;
+            font-size: 19px;
+            font-weight: 650;
+        }
 
-.experience {
-    padding: 18px 0;
-    border-bottom: 1px solid #999999;
-}
+        .project h3 a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-.experience:last-child {
-    border-bottom: none;
-}
+        .project h3 a:hover {
+            text-decoration: underline;
+        }
 
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 25px;
-}
+        .project p {
+            margin: 0 0 10px 0;
+        }
 
-.experience h3 {
-    font-size: 20px;
-    margin: 0;
-}
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
 
-.experience-date {
-    font-size: 17px;
-    color: #777777;
-    white-space: nowrap;
-}
+        .tag {
+            background: #eef0f2;
+            padding: 5px 9px;
+            border-radius: 3px;
+            font-size: 13px;
+            color: #444;
+        }
 
-.experience-details {
-    margin-top: 3px;
-    font-size: 17px;
-    color: #777777;
-}
+        /* =========================
+           EXPERIENCE
+        ========================= */
 
-.experience-description {
-    margin-top: 10px;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555555;
-}
+        .experience-item {
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #e1e1e1;
+        }
 
+        .experience-item:last-child {
+            border-bottom: none;
+        }
 
-/* SKILLS */
+        .experience-heading {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: baseline;
+        }
 
-.skills {
-    font-size: 17px;
-    line-height: 1.8;
-}
+        .experience-heading h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 650;
+        }
 
-.skill-row {
-    margin-bottom: 5px;
-}
+        .experience-date {
+            white-space: nowrap;
+            color: #666;
+            font-size: 14px;
+        }
 
-.skill-label {
-    font-weight: 600;
-}
+        .organization {
+            margin: 3px 0 9px 0;
+            color: #666;
+            font-size: 15px;
+        }
 
+        .organization em {
+            color: #777;
+        }
 
-/* COURSEWORK */
+        /* =========================
+           SKILLS
+        ========================= */
 
-.coursework-list {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #555555;
-}
+        .skills-row {
+            margin-bottom: 13px;
+        }
 
+        .skills-row strong {
+            font-weight: 650;
+        }
 
-/* MOBILE */
+        /* =========================
+           COURSEWORK
+        ========================= */
 
-@media (max-width: 800px) {
+        .coursework {
+            line-height: 1.9;
+        }
 
-    .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
-    .content {
-        margin-left: 0;
-        padding: 35px 25px;
-    }
+        @media (max-width: 800px) {
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 35px 28px;
+            }
 
-    .experience-header {
-        flex-direction: column;
-        gap: 2px;
-    }
+            .content {
+                margin-left: 0;
+                padding: 40px 28px;
+            }
 
-}
+            .portrait {
+                width: 125px;
+                height: 125px;
+            }
 
-</style>
+            .experience-heading {
+                display: block;
+            }
 
+            .experience-date {
+                display: block;
+                margin-top: 3px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<!-- SIDEBAR -->
-
-<aside class="sidebar">
-
-<img src="Portrait.png" alt="Tagbo profile photo" class="profile-photo">
-
-<h1>Tagbo</h1>
-
-<div class="education-sidebar">
-
-<div class="school">
-<div class="school-name">Northwestern University</div>
-<div class="degree-name">MS Computer Science</div>
-</div>
-
-<div class="school">
-<div class="school-name">University of Rochester</div>
-<div class="degree-name">BA Statistics</div>
-</div>
-
-</div>
-
-<p>📍 Evanston, IL</p>
-
-<p>
-✉️ <a href="mailto:tagbougo-obi2027@u.northwestern.edu">Email</a>
-</p>
-
-<p>
-💻 <a href="https://github.com/T-UO" target="_blank">GitHub</a>
-</p>
-
-<p>
-🔗 <a href="https://www.linkedin.com/in/tagbo-u-6b744b45/" target="_blank">LinkedIn</a>
-</p>
-
-<p>
-📄 <a href="resume.pdf" target="_blank">Resume</a>
-</p>
-
-</aside>
-
-
-<!-- MAIN CONTENT -->
-
-<main class="content">
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<h2>About</h2>
-
-<p>
-Hi, I'm Tagbo — a Master's student in Computer Science at Northwestern University.
-</p>
-
-<p>
-My interests are in computer vision, machine learning, and high-performance computing, with a growing focus on 3D vision and geometric understanding. I'm particularly interested in how computational systems can extract useful information about the structure and geometry of the physical world from visual data.
-</p>
-
-<p>
-My technical background spans parallel computing, parallel architectures, embedded systems, and systems programming. Through coursework and projects, I've worked with C++, CUDA, multithreaded programming, microcontrollers, image processing algorithms, and machine learning.
-</p>
-
-<p>
-I'm currently developing my interests in areas such as 3D surface reconstruction, geometric computer vision, scene understanding, and perception for embodied systems.
-</p>
-
-<p>
-Before pursuing computer science, I worked in capital markets. I'm interested in combining my engineering and quantitative background with my developing expertise in computer vision to solve challenging real-world problems.
-</p>
-
-</section>
-
-
-<!-- RESEARCH INTERESTS -->
-
-<section id="research">
-
-<h2>Research Interests</h2>
-
-<p>
-Computer Vision · 3D Computer Vision · Geometric Computer Vision · 3D Surface Reconstruction · Scene Understanding · Robot Perception · Embodied AI
-</p>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-
-<div class="project">
-
-<h3>Parallel Sobel Edge Detection Pipeline</h3>
-
-<p>
-Developed a parallel Sobel edge-detection pipeline using a producer-consumer architecture with POSIX threads and shared and partitioned ring-buffer work queues. Evaluated how thread count and queue organization affected execution time, throughput, and contention, and implemented an exploratory CUDA version to compare CPU and GPU execution.
-</p>
-
-<div class="tags">
-C · C++ · CUDA · POSIX Threads · Parallel Computing · Image Processing
-</div>
-
-</div>
-
-
-<div class="project">
-
-<h3>Teleoperation Glove: Embedded Sensing and Communication</h3>
-
-<p>
-Developed the sensing and communication components for a teleoperation project using multiple IMUs and nRF52833 microcontrollers. Integrated wrist, forearm, and upper-arm orientation sensors over I2C and UART, processed orientation data on embedded hardware, and implemented wireless transmission of sensor measurements using 802.15.4.
-</p>
-
-<div class="tags">
-Embedded C · nRF52833 · IMUs · I2C · UART · 802.15.4
-</div>
-
-</div>
-
-
-<div class="project">
-
-<h3>Image Processing Algorithms</h3>
-
-<p>
-Implemented a C image-processing application supporting grayscale conversion, thresholding, image sharpening, and Sobel edge detection. Applied neighborhood-based filters and pixel-level operations to transform images and extract visual features.
-</p>
-
-<div class="tags">
-C · Image Processing · Sobel Filter · Edge Detection · Convolution
-</div>
-
-</div>
-
-
-<div class="project">
-
-<h3>OpenStreetMap Data Processing and Search</h3>
-
-<p>
-Developed a C++ application to process OpenStreetMap data for Northwestern's Evanston campus. Implemented building and amenity search, geographic queries, and location calculations while improving node lookup efficiency through binary search and reference-based parameter passing.
-</p>
-
-<div class="tags">
-C++ · OOP · OpenStreetMap · XML · Data Structures · Binary Search
-</div>
-
-</div>
-
-</section>
-
-
-<!-- EXPERIENCE -->
-
-<section id="experience">
-
-<h2>Experience</h2>
-
-
-<div class="experience">
-
-<div class="experience-header">
-<h3>Peer Mentor</h3>
-<div class="experience-date">Fall 2026</div>
-</div>
-
-<div class="experience-details">
-Northwestern University · <em>CS 317: Sports, Technology and Learning</em>
-</div>
-
-</div>
-
-
-<div class="experience">
-
-<div class="experience-header">
-<h3>MBS Strategies Associate</h3>
-<div class="experience-date">Jan. 2021 – May 2024</div>
-</div>
-
-<div class="experience-details">
-FHN Financial · <em>Capital Markets</em>
-</div>
-
-<div class="experience-description">
-Conducted quantitative analysis of mortgage-backed securities and developed tools to automate recurring analytical and trading workflows. Built VBA applications for MBS inventory analysis and weekly pricing requests, reducing repetitive manual work and streamlining recurring processes.
-</div>
-
-</div>
-
-
-<div class="experience">
-
-<div class="experience-header">
-<h3>Investment Banking Analyst</h3>
-<div class="experience-date">Oct. 2018 – Jan. 2021</div>
-</div>
-
-<div class="experience-details">
-Ziegler · <em>Healthcare Corporate Finance</em>
-</div>
-
-<div class="experience-description">
-Supported healthcare M&amp;A transactions through financial modeling, valuation analysis, industry research, due diligence, and transaction execution.
-</div>
-
-</div>
-
-
-</section>
-
-
-<!-- TECHNICAL SKILLS -->
-
-<section id="skills">
-
-<h2>Technical Skills</h2>
-
-<div class="skills">
-
-<div class="skill-row">
-<span class="skill-label">Languages:</span>
-Java, C++, C, VBA, Python, R
-</div>
-
-<div class="skill-row">
-<span class="skill-label">Parallel &amp; Systems:</span>
-CUDA, POSIX Threads, Multithreading, Parallel Programming
-</div>
-
-<div class="skill-row">
-<span class="skill-label">Embedded:</span>
-nRF52833, Microcontrollers, I2C, UART, 802.15.4, IMU Integration
-</div>
-
-<div class="skill-row">
-<span class="skill-label">Databases:</span>
-MySQL
-</div>
-
-<div class="skill-row">
-<span class="skill-label">Development &amp; Tools:</span>
-Git, GitHub, Linux, Docker
-</div>
-
-<div class="skill-row">
-<span class="skill-label">Financial &amp; Data Tools:</span>
-Bloomberg, YieldBook, S&amp;P Capital IQ, Excel
-</div>
-
-</div>
-
-</section>
-
-
-<!-- RELEVANT COURSEWORK -->
-
-<section id="coursework">
-
-<h2>Relevant Coursework</h2>
-
-<p class="coursework-list">
-Foundations of Computing (C &amp; C++) ·
-Microcontroller Design ·
-Machine Learning ·
-Deep Reinforcement Learning ·
-Intro to Parallel Computing ·
-Parallel Architectures
-</p>
-
-</section>
-
-
-</main>
+    <aside class="sidebar">
+
+        <img src="Portrait.png" alt="Portrait of Tagbo" class="portrait">
+
+        <h1>Tagbo</h1>
+        <p class="subtitle">Master's Student in Computer Science</p>
+
+        <div class="sidebar-section">
+            <p>
+                Northwestern University<br>
+                MS Computer Science
+            </p>
+
+            <p>
+                University of Rochester<br>
+                BA Statistics
+            </p>
+        </div>
+
+        <div class="sidebar-section">
+            <p>Evanston, IL</p>
+            <p>
+                <a href="mailto:tagbougo-obi2027@u.northwestern.edu">
+                    tagbougo-obi2027@u.northwestern.edu
+                </a>
+            </p>
+        </div>
+
+        <div class="sidebar-links">
+            <a href="https://github.com/T-UO"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/tagbo-u-6b744b45/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a href="resume.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+                Resume
+            </a>
+        </div>
+
+    </aside>
+
+
+    <main class="content">
+        <div class="container">
+
+            <!-- ABOUT -->
+
+            <section id="about">
+                <h2>ABOUT</h2>
+
+                <p>
+                    Hi, I'm Tagbo — a Master's student in Computer Science at
+                    Northwestern University.
+                </p>
+
+                <p>
+                    My interests are in computer vision, machine learning, and
+                    high-performance computing, with a growing focus on 3D vision
+                    and geometric understanding. I'm particularly interested in
+                    how computational systems can extract useful information about
+                    the structure and geometry of the physical world from visual data.
+                </p>
+
+                <p>
+                    My technical background spans parallel computing, parallel
+                    architectures, embedded systems, and systems programming.
+                    Through coursework and projects, I've worked with C++, CUDA,
+                    multithreaded programming, microcontrollers, image processing
+                    algorithms, and machine learning.
+                </p>
+
+                <p>
+                    I'm currently developing my interests in areas such as 3D
+                    surface reconstruction, geometric computer vision, scene
+                    understanding, and perception for embodied systems.
+                </p>
+
+                <p>
+                    Before pursuing computer science, I worked in capital markets.
+                    I'm interested in combining my engineering and quantitative
+                    background with my developing expertise in computer vision to
+                    solve challenging real-world problems.
+                </p>
+            </section>
+
+
+            <!-- RESEARCH INTERESTS -->
+
+            <section id="research">
+                <h2>RESEARCH INTERESTS</h2>
+
+                <div class="interests">
+                    <span class="interest">Computer Vision</span>
+                    <span class="interest">3D Computer Vision</span>
+                    <span class="interest">Geometric Computer Vision</span>
+                    <span class="interest">3D Surface Reconstruction</span>
+                    <span class="interest">Scene Understanding</span>
+                    <span class="interest">Robot Perception</span>
+                    <span class="interest">Embodied AI</span>
+                </div>
+            </section>
+
+
+            <!-- PROJECTS -->
+
+            <section id="projects">
+                <h2>PROJECTS</h2>
+
+                <div class="project">
+                    <h3>
+                        <a href="https://github.com/T-UO/Parallel-Sobel-Pipeline"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Parallel Sobel Edge Detection Pipeline
+                        </a>
+                    </h3>
+
+                    <p>
+                        Developed a parallel Sobel edge-detection pipeline using a
+                        producer-consumer architecture with POSIX threads and shared
+                        and partitioned ring-buffer work queues. Evaluated how thread
+                        count and queue organization affected execution time,
+                        throughput, and contention, and implemented an exploratory
+                        CUDA version to compare CPU and GPU execution.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">C</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">CUDA</span>
+                        <span class="tag">POSIX Threads</span>
+                        <span class="tag">Parallel Computing</span>
+                        <span class="tag">Image Processing</span>
+                    </div>
+                </div>
+
+
+                <div class="project">
+                    <h3>
+                        <a href="https://github.com/T-UO/Teleoperation-Sensing-Communication"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Teleoperation Glove: Embedded Sensing and Communication
+                        </a>
+                    </h3>
+
+                    <p>
+                        Developed the sensing and communication components for a
+                        teleoperation project using multiple IMUs and nRF52833
+                        microcontrollers. Integrated wrist, forearm, and upper-arm
+                        orientation sensors over I2C and UART, processed orientation
+                        data on embedded hardware, and implemented wireless
+                        transmission of sensor measurements using 802.15.4.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Embedded C</span>
+                        <span class="tag">nRF52833</span>
+                        <span class="tag">IMUs</span>
+                        <span class="tag">I2C</span>
+                        <span class="tag">UART</span>
+                        <span class="tag">802.15.4</span>
+                    </div>
+                </div>
+
+
+                <div class="project">
+                    <h3>
+                        <a href="https://github.com/T-UO/Image-Processing-Algorithms"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Image Processing Algorithms
+                        </a>
+                    </h3>
+
+                    <p>
+                        Implemented a C image-processing application supporting
+                        grayscale conversion, thresholding, image sharpening, and
+                        Sobel edge detection. Applied neighborhood-based filters and
+                        pixel-level operations to transform images and extract visual
+                        features.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Image Processing</span>
+                        <span class="tag">Sobel Filter</span>
+                        <span class="tag">Edge Detection</span>
+                        <span class="tag">Convolution</span>
+                    </div>
+                </div>
+
+
+                <div class="project">
+                    <h3>
+                        <a href="https://github.com/T-UO/OpenStreetMap-Data-Search"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            OpenStreetMap Data Processing and Search
+                        </a>
+                    </h3>
+
+                    <p>
+                        Developed a C++ application to process OpenStreetMap data
+                        for Northwestern's Evanston campus. Implemented building and
+                        amenity search, geographic queries, and location calculations
+                        while improving node lookup efficiency through binary search
+                        and reference-based parameter passing.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">OOP</span>
+                        <span class="tag">OpenStreetMap</span>
+                        <span class="tag">XML</span>
+                        <span class="tag">Data Structures</span>
+                        <span class="tag">Binary Search</span>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- EXPERIENCE -->
+
+            <section id="experience">
+                <h2>EXPERIENCE</h2>
+
+                <div class="experience-item">
+                    <div class="experience-heading">
+                        <h3>Peer Mentor</h3>
+                        <span class="experience-date">Fall 2026</span>
+                    </div>
+
+                    <p class="organization">
+                        Northwestern University ·
+                        <em>CS 317: Sports, Technology and Learning</em>
+                    </p>
+                </div>
+
+
+                <div class="experience-item">
+                    <div class="experience-heading">
+                        <h3>Capital Markets – MBS Strategies Associate</h3>
+                    </div>
+
+                    <p class="organization">
+                        FHN Financial · Chicago, IL
+                    </p>
+
+                    <p>
+                        Conducted quantitative analysis of mortgage-backed securities
+                        and developed tools to automate recurring analytical and
+                        trading workflows. Built VBA applications for MBS inventory
+                        analysis and weekly pricing requests, reducing repetitive
+                        manual work and streamlining recurring processes.
+                    </p>
+                </div>
+
+
+                <div class="experience-item">
+                    <div class="experience-heading">
+                        <h3>Healthcare Corporate Finance – Investment Banking Analyst</h3>
+                    </div>
+
+                    <p class="organization">
+                        Ziegler · Nashville, TN
+                    </p>
+
+                    <p>
+                        Supported healthcare M&amp;A transactions through financial
+                        modeling, valuation analysis, industry research, due
+                        diligence, and transaction execution.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- TECHNICAL SKILLS -->
+
+            <section id="skills">
+                <h2>TECHNICAL SKILLS</h2>
+
+                <div class="skills-row">
+                    <strong>Languages:</strong>
+                    Java, C++, C, VBA, Python, R
+                </div>
+
+                <div class="skills-row">
+                    <strong>Parallel &amp; Systems:</strong>
+                    CUDA, POSIX Threads, Multithreading, Parallel Programming
+                </div>
+
+                <div class="skills-row">
+                    <strong>Embedded:</strong>
+                    nRF52833, Microcontrollers, I2C, UART, 802.15.4, IMU Integration
+                </div>
+
+                <div class="skills-row">
+                    <strong>Databases:</strong>
+                    MySQL
+                </div>
+
+                <div class="skills-row">
+                    <strong>Development &amp; Tools:</strong>
+                    Git, GitHub, Docker
+                </div>
+
+                <div class="skills-row">
+                    <strong>Financial &amp; Data Tools:</strong>
+                    Bloomberg, YieldBook, S&amp;P Capital IQ, Excel
+                </div>
+            </section>
+
+
+            <!-- COURSEWORK -->
+
+            <section id="coursework">
+                <h2>RELEVANT COURSEWORK</h2>
+
+                <p class="coursework">
+                    Foundations of Computing (C &amp; C++) ·
+                    Microcontroller Design ·
+                    Machine Learning ·
+                    Deep Reinforcement Learning ·
+                    Intro to Parallel Computing ·
+                    Parallel Architectures
+                </p>
+            </section>
+
+        </div>
+    </main>
 
 </body>
-
 </html>
